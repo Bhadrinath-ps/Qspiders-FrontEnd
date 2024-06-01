@@ -32,7 +32,4 @@ Feel free to explore these projects, check out the code, try the live applicatio
 
 ## Click To View My Projects
 
-🔗 [Zomato](https://bhadrinath-ps.github.io/Qspiders-FrontEnd/Zomato.html)  
-🔗 [Google Search](https://bhadrinath-ps.github.io/Qspiders-FrontEnd/Google-Search-Clone.html)  
-🔗 [Creative Pricing Table](https://bhadrinath-ps.github.io/Qspiders-FrontEnd/Creative-Pricing-Table.html)  
-🔗 [Instagram Credentials](https://bhadrinath-ps.github.io/Qspiders-FrontEnd/Instagram-Credentials/Instagram-Login.html)  
+🔗 [Zomato](https://bhadrinath-ps.github.io/Qspiders-FrontEnd/Zomato.html)  🔗 [Google Search](https://bhadrinath-ps.github.io/Qspiders-FrontEnd/Google-Search-Clone.html)  🔗 [Creative Pricing Table](https://bhadrinath-ps.github.io/Qspiders-FrontEnd/Creative-Pricing-Table.html)  🔗 [Instagram Credentials](https://bhadrinath-ps.github.io/Qspiders-FrontEnd/Instagram-Credentials/Instagram-Login.html)  
