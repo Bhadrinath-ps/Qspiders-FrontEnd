@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="/Assets/Instagram-Icon.png" type="image/x-icon">
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .full-content {
+            position: relative;
+            top: 30px;
+            margin-left: 590px;
+        }
+
+        .instagram-font {
+            width: 270px;
+        }
+
+        .para-content p {
+            width: 250px;
+            padding: 10px;
+            margin-top: -30px;
+            font-size: 16px;
+            text-align: center;
+            color: rgb(104, 104, 104);
+            font-weight: 500;
+        }
+
+        .facebook-text h1 {
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            margin: 8px 1px 26px 4px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
+            background-color: rgba(0, 0, 255, 0.529);
+        }
+
+        .facebook-text .fa-facebook-f {
+            background-color: #ffffff;
+            padding: 3px 3px 0px 5px;
+            color: rgba(0, 0, 255, 0.530);
+            font-size: 12px;
+            border-radius: 2px;
+            border: 1px solid white;
+            cursor: pointer;
+        }
+
+        .insta-box,
+        .signup-box {
+            align-items: center;
+            width: 350px;
+            border: 1px solid rgba(123, 91, 153, 0.270);
+            border-radius: 1px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            margin: 0px 42px 10px 0px;
+            padding: 10px 0px;
+        }
+
+        .insta-box{
+            margin: -16px 42px 10px 0px;
+        }
+
+        .input input {
+            width: 250px;
+            padding: 10px;
+            margin: 6px 0px 0px 5px;
+            border: 1px solid rgba(133, 133, 203, 0.400);
+            border-radius: 3px;
+        }
+
+        .input :focus {
+            outline: none;
+            border: 1px solid rgba(133, 133, 203, 0.850);
+        }
+
+        ::placeholder {
+            font-size: 12px;
+            color: rgba(29, 23, 23, 0.753);
+        }
+
+        .policy-text {
+            width: 265px;
+            padding: 7px 0px 4px 10px;
+            margin-top: 6px;
+            font-size: 12px;
+            text-align: center;
+            color: rgba(100, 99, 99, 0.893);
+            font-weight: 400;
+        }
+
+        .policy-text span {
+            color: rgba(22, 33, 80, 0.94);
+        }
+
+        .signup-button {
+            margin: 11px 0px 28px 5px;
+            padding: 7px 111.8px;
+            color: white;
+            font-size: 14px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            background-color: rgba(102, 61, 146, 0.480);
+        }
+
+        hr {
+            border: 1px solid rgba(111, 111, 111, 0.299);
+            width: 269px;
+            margin: 22px 0px 0px 5px;
+        }
+
+        .or-text {
+            position: relative;
+            top: -10.5px;
+            font-size: 13px;
+            font-weight: 600;
+            width: 60px;
+            color: rgba(53, 60, 93, 0.758);
+            text-align: center;
+            margin-left: 105px;
+            background-color: #ffffff;
+        }
+
+        .signup-box p {
+            padding: 11px 0px;
+            font-size: 14px;
+        }
+
+        .signup-box a {
+            text-decoration: none;
+            font-weight: 600;
+            color: rgba(86, 86, 199, 0.890);
+        }
+
+        .signup-box :focus {
+            color: rgba(86, 86, 199, 0.490);
+        }
+
+        .social-medias {
+            display: inline-block;
+            justify-content: center;
+            margin-top: 4px;
+        }
+
+        .get-the-app {
+            text-align: center;
+            margin-left: 40px;
+        }
+
+        .get-it-from-links {
+            margin-left: 45px;
+        }
+
+        .get-it-from {
+            display: inline-block;
+            color: white;
+            background-color: black;
+            border-radius: 6px;
+            padding: 0px 9px 6px 9px;
+            font-size: 14px;
+            margin: 13px 5px 100px 0px;
+        }
+
+        .get-it-from img,
+        .get-it-from p {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .get-it-from img {
+            width: 25px;
+            padding-right: 3px;
+        }
+
+        .get-it {
+            text-transform: uppercase;
+            font-size: 8.8px;
+        }
+
+        .google-play,
+        .microsoft {
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .links,
+        .footer {
+            display: flex;
+            font-size: 11.9px;
+            justify-content: center;
+            text-align: center;
+            padding: 9.2px 0px;
+        }
+
+        .links p {
+            padding: 0px 9px;
+        }
+
+        .links a,
+        .footer a {
+            text-decoration: none;
+            color: rgb(110, 110, 110);
+        }
+
+        .links :focus {
+            color: rgba(110, 110, 110, 0.500);
+        }
+
+        .footer {
+            margin: 4px 0px 0px 20px;
+        }
+
+        .footer p {
+            padding: 0px 15px 40px 0px;
+            margin-top: -3px;
+        }
+
+        .footer p i {
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="full-content">
+        <div class="login-box">
+            <fieldset class="insta-box">
+                <form action="#">
+                    <img class="instagram-font" src="/Assets/Instagram-Font.png" alt="Instagram-Font">
+                    <div class="para-content">
+                        <p>Sign up to see photos and videos from your friends.</p>
+                    </div>
+                    <div class="facebook-text">
+                        <h1><i class="fa-brands fa-facebook-f"></i> Log in with Facebook</h1>
+                    </div>
+                    <div>
+                        <hr class="hr-text">
+                        <div class="or-text">
+                            <p>OR</p>
+                        </div>
+                    </div>
+                    <div class="input">
+                        <input type="text" placeholder="Mobile Number or Email">
+                    </div>
+                    <div class="input">
+                        <input type="text" placeholder="Full Name">
+                    </div>
+                    <div class="input">
+                        <input type="text" placeholder="Username">
+                    </div>
+                    <div class="input">
+                        <input type="password" placeholder="Password">
+                    </div>
+
+                    <p class="policy-text">People who use our service may have uploaded your contact information to
+                        Instagram. <span>Learn More</span></p>
+                    <p class="policy-text">By signing up, you agree to our Terms , <span>Privacy Policy</span> and
+                        <span>Cookies Policy .</span>
+                    </p>
+                    <button class="signup-button">
+                        <p>Sign up</p>
+                    </button>
+                </form>
+            </fieldset>
+        </div>
+
+        <fieldset class="signup-box">
+            <p>Have an account? <a href="/Instagram-Credentials/Instagram-Login.html"> Log in</a>
+            </p>
+        </fieldset>
+
+        <div class="social-medias">
+            <div class="get-the-app">
+                <p>Get the app.</p>
+            </div>
+            <div class="get-it-from-links">
+                <div class="get-it-from">
+                    <img src="/Assets/Playstore-Icon.png" alt="Playstore-Icon"></img>
+                    <p><span class="get-it">Get it on</span><br><span class="google-play">Google Play</span>
+                </div>
+                <div class="get-it-from">
+                    <img src="/Assets/Microsoft-Icon.png" alt="Microsoft-Icon">
+                    <p><span class="get-it">Get it from</span><br><span class="microsoft">Microsoft</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="links">
+            <p><a href="#">Meta</a></p>
+            <p><a href="#">About</a></p>
+            <p><a href="#">Blog</a></p>
+            <p><a href="#">Jobs</a></p>
+            <p><a href="#">Help</a></p>
+            <p><a href="#">API</a></p>
+            <p><a href="#">Privacy</a></p>
+            <p><a href="#">Terms</a></p>
+            <p><a href="#">Locations</a></p>
+            <p><a href="#">Instagram Lite</a></p>
+            <p><a href="#">Threads</a></p>
+            <p><a href="#">Contact Uploading & Non-Users</a></p>
+            <p><a href="#">Meta Verified</a></p>
+        </div>
+        <div class="footer">
+            <p><a href="#">English <i class="fa-solid fa-chevron-down"></i></a></p>
+            <p><a href="#"><i class="fa-regular fa-copyright"></i> 2024 Instagram from Meta</a></p>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

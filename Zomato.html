@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="./Assets/Zomato-Icon.png" type="image/x-icon">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+        * {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        /* Zomato-BG & Nav */
+
+        .zomato-bg {
+            background: url("https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+        }
+
+        .navbar {
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .navbar .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 76%;
+            margin: auto;
+        }
+
+        .navbar .logo img {
+            margin-bottom: -2px;
+            width: 2.5%;
+        }
+
+        .navbar .logo p {
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .navbar nav ul {
+            list-style-type: none;
+            display: flex;
+        }
+
+        .navbar nav ul li {
+            font-weight: 100;
+            font-size: 17px;
+            margin-left: 32.5px;
+            padding: 15px 0px;
+        }
+
+        .navbar nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Search Bar */
+
+        .search-bar {
+            padding: 20px 0;
+        }
+
+        .search-bar .nav-contents-container {
+            text-align: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .search-bar .nav-contents-container img {
+            padding: 30px 0px 0px 0px;
+            width: 280px;
+            margin-top: -20px;
+        }
+
+        .search-bar .nav-contents-container p {
+            font-weight: 100;
+            font-size: 34px;
+            color: #fff;
+            padding: 30px 0px;
+        }
+
+        .search-bar .nav-contents-container p strong {
+            font-weight: 400;
+        }
+
+        .search-bar input {
+            width: 31.5%;
+            outline: none;
+            border: none;
+            border-radius: 0px 10px 10px 0px;
+        }
+
+        .search-bar ::placeholder {
+            font-size: 15px;
+        }
+
+        .dropdown {
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #fff;
+        }
+
+        .dropbtn .search-input {
+            font-size: 15px;
+            padding: 19px 0px 18px 0px;
+            position: relative;
+            left: -40px;
+            margin-right: 40px;
+        }
+
+        .dropbtn .fa-location-dot {
+            font-size: 20px;
+            color: rgba(192, 170, 96, 0.781);
+            padding-right: 45px;
+            margin-left: -39px;
+        }
+
+        .dropbtn .fa-caret-down {
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.65);
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        span .fa-magnifying-glass {
+            color: gray;
+            padding-right: -10px;
+            font-size: 17px;
+        }
+
+        .dropbtn {
+            color: gray;
+            padding: 0px 0px 0px 5px;
+            border-radius: 10px 0px 0px 10px;
+        }
+
+        .search-bar span {
+            margin-left: -30px;
+        }
+
+        .search-bar span .restaurant-input {
+            padding: 20.5px 0px 18.5px 10px;
+            margin-bottom: 70px;
+        }
+
+        /* Featured */
+
+        .featured {
+            padding: 40px 0px 60px 0px;
+            background-color: #fff;
+        }
+
+        .featured .container {
+            width: 72%;
+            margin: auto;
+        }
+
+        .featured .restaurants {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .featured .restaurant {
+            width: 32%;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .featured .restaurant:hover {
+            transform: scale(1.05);
+        }
+
+        .featured .restaurant img {
+            width: 100%;
+            height: 155px;
+            object-fit: cover;
+            border-radius: 14px 14px 0px 0px;
+        }
+
+        .featured .content {
+            border: 1px solid rgb(232, 232, 232);
+            border-radius: 0px 0px 1.2rem 1.2rem;
+            margin-top: -5px;
+        }
+
+        .featured .restaurant .main-heading {
+            padding: 15px 0px 0px 20px;
+            font-size: 18.5px;
+            font-weight: 500;
+            color: rgb(54, 54, 54);
+        }
+
+        .featured .restaurant .sub-heading {
+            padding: 10px 0px 16px 20px;
+            font-size: 15px;
+            font-weight: 300;
+            color: rgb(79, 79, 79);
+        }
+
+        /* Cuisines */
+
+        .cuisines {
+            padding: 20px 0;
+            background-color: #fff;
+        }
+
+        .cuisines .container {
+            width: 72%;
+            margin: auto;
+        }
+
+        .cuisines h1 {
+            font-size: 33.5px;
+            font-weight: 500;
+            color: rgb(2, 2, 2);
+            margin-bottom: 8px;
+        }
+
+        .cuisines .cuisines-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+        }
+
+        .cuisines .subhead1 {
+            color: rgb(54, 54, 54);
+            font-weight: lighter;
+            margin-bottom: 30px;
+            font-size: 16.5px;
+        }
+
+        .cuisines .subhead2 {
+            color: rgba(224, 53, 70, 0.700);
+            font-weight: lighter;
+        }
+
+        .cuisines .cuisines-list {
+            display: flex;
+            justify-content: space-between;
+            column-gap: 10px;
+        }
+
+        .cuisines .cuisine img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            text-align: center;
+            border-radius: 6px;
+        }
+
+        .cuisines .cuisine {
+            position: relative;
+            overflow: hidden;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .cuisines .cuisine::after {
+            content: "";
+            position: absolute;
+            bottom: 3px;
+            left: 0;
+            width: 100%;
+            height: 300px;
+            border-radius: 6px;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.05) 50%, rgba(0, 0, 0, 0.05) 85%);
+            z-index: 1;
+        }
+
+        .cuisines .cuisine .cuisine-content {
+            color: white;
+            position: absolute;
+            font-size: 17px;
+            bottom: 15px;
+            left: 18px;
+            z-index: 2;
+        }
+
+        .cuisines .cuisine .cuisine-content .places {
+            padding: 5px 5px 0px 0px;
+            font-size: 14.5px;
+        }
+
+        .cuisines .cuisine .cuisine-content .places i {
+            margin-left: 6px;
+        }
+
+        /* Location */
+
+        .loc .container {
+            width: 72%;
+            margin: auto;
+        }
+
+        .loc {
+            padding: 100px 0;
+        }
+
+        .loc h3 {
+            color: #1c1b1b;
+            font-weight: 100;
+            margin-bottom: 40px;
+            font-size: 32px;
+        }
+
+        .loc h3 span {
+            color: #1c1b1b;
+            font-weight: 400;
+        }
+
+        .loc .locations {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 14px;
+            row-gap: 17px;
+        }
+
+        .loc .location {
+            background-color: #f5f5f5;
+            padding: 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            background: rgb(255, 255, 255);
+            border: 1px solid rgb(232, 232, 232);
+            box-shadow: 0.2px 0.2px 2px rgba(27, 124, 222, 0.200);
+        }
+
+        .loc .location h2 {
+            margin-bottom: 8.5px;
+            font-size: 18.5px;
+            font-weight: 100;
+            color: #1c1c1c;
+        }
+
+        .loc .location a {
+            text-decoration: none;
+        }
+
+        .loc .location p {
+            margin: 1px 0px;
+            font-size: 15.5px;
+            font-weight: 100;
+            color: rgba(54, 54, 54, 0.800);
+        }
+
+        .loc .location .fa-angle-right {
+            position: absolute;
+            margin: -30px 100px 0px 0px;
+            padding-left: 310px;
+            font-size: 12px;
+        }
+
+        .loc .see-more {
+            color: #1b1b1b;
+            font-size: 17.5px;
+            text-align: center;
+            display: block;
+            margin-top: 15px;
+            text-decoration: none;
+        }
+
+        .loc .see-more .fa-angle-down {
+            position: relative;
+            top: -2px;
+            margin-left: 6.5px;
+            font-size: 13.3px;
+        }
+
+        /* Phone App */
+
+        .phone-app {
+            padding: 60px 0;
+        }
+
+        .phone-app .container {
+            width: 53%;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .phone-app .app-image img {
+            width: 250px;
+            height: 450px;
+            object-fit: contain;
+            margin: -24px 20px 0px 25px;
+        }
+
+        .phone-app .app-content {
+            margin-left: 20px;
+        }
+
+        .phone-app .app-content h3 {
+            font-size: 42px;
+            font-weight: 300;
+            padding-bottom: 10px;
+        }
+
+        .phone-app .app-content p {
+            color: #363636d6;
+            font-size: 15.2px;
+            width: 460px;
+            line-height: 30px;
+            padding: 10px 0px;
+        }
+
+        .phone-app .app-content input[type=radio],
+        .radio {
+            padding: 18px 0px 20px 0px;
+            height: 20px;
+        }
+
+        .phone-app .app-content .radio h1 {
+            position: relative;
+            top: -3px;
+            font-size: 15px;
+            margin-right: 30px;
+            font-weight: 100;
+            display: inline-block;
+            color: #1c1c1c;
+        }
+
+        input[type="radio"] {
+            width: 30px;
+            color: #1c1c1c;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .phone-app .app-content input[type=email] {
+            padding: 12px 35px 12px 15px;
+            background: rgb(255, 255, 255);
+            border: 1px solid rgba(207, 207, 207, 0.850);
+            font-size: 18px;
+            outline: none;
+            box-sizing: border-box;
+            border-radius: 8px;
+            color: rgb(28, 28, 28);
+        }
+
+        .phone-app .app-content ::placeholder {
+            font-weight: 100;
+            color: rgba(171, 171, 171, 0.85);
+        }
+
+        .phone-app .app-content button {
+            font-size: 16px;
+            font-weight: 100;
+            color: rgb(255, 255, 255);
+            background: border-box rgb(239, 79, 85);
+            border: solid rgb(239, 79, 95);
+            border-radius: 0.6rem;
+            margin-left: 3px;
+            padding: 12px 13.5px 12px 13.5px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .phone-app button:hover {
+            background: rgb(237, 40, 60);
+            border: solid rgb(237, 40, 60);
+        }
+
+        .phone-app .app-content .store-font {
+            padding: 15px 0px 12px 0px;
+            font-size: 14px;
+            color: #9c9c9c;
+        }
+
+        .phone-app .app-content .app-store img {
+            width: 28%;
+            margin-right: 12px;
+            cursor: pointer;
+        }
+
+        /* Explore */
+
+        .explore {
+            padding: 20px 0px 40px 0px;
+            background-color: #fff;
+        }
+
+        .explore .container {
+            width: 72%;
+            margin: auto;
+        }
+
+        .explore .container h3 {
+            color: #363636;
+            font-weight: 100;
+            margin-bottom: 12px;
+            font-size: 27px;
+        }
+
+        .explore .container .populars {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .explore .container .populars .popular {
+            font-size: 17.5px;
+            padding: 20px 24px 23px 24px;
+            margin: 10px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            color: #1c1c1c;
+            border: 1px solid rgb(232, 232, 232);
+        }
+
+        .explore .container .populars .popular i {
+            cursor: pointer;
+            display: flex;
+            justify-content: flex-end;
+            margin-top: -18px;
+            font-size: 14px;
+        }
+
+        /* Footer */
+
+        .footer {
+            background-color: rgb(248, 248, 248);
+        }
+
+        .footer .container {
+            width: 72%;
+            margin: auto;
+        }
+
+        .footer .container .hd {
+            padding: 50px 0px 40px 0px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer .logo img {
+            width: 68%;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .footer .language-switcher {
+            display: flex;
+        }
+
+        .footer .language-switcher span {
+            font-size: 16px;
+            border: 1px solid rgb(181, 181, 181);
+            border-radius: 5px;
+            margin-left: 18px;
+            padding: 9px;
+            cursor: pointer;
+        }
+
+        .footer .language-switcher span img {
+            height: 22px;
+            width: 22px;
+            object-fit: cover;
+            margin: 0px 8px -5px 0px;
+        }
+
+        .footer .language-switcher i {
+            font-size: 11.5px;
+            margin: 0px 5px 0px 5px;
+            position: relative;
+            top: -2px;
+        }
+
+        .footer .li-head {
+            letter-spacing: 2px;
+            text-decoration: none;
+            margin-bottom: 6px;
+            color: #333;
+        }
+
+        .footer .footer-links {
+            width: 108%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer li a {
+            color: #696969;
+            text-decoration: none;
+            padding: 5px 0px -10px 0px;
+        }
+
+        .footer .footer-links li a:hover {
+            color: rgb(56, 56, 56);
+        }
+
+        .footer li {
+            list-style-type: none;
+            font-size: 14px;
+            padding: 4px 0;
+            font-weight: 100;
+        }
+
+        .footer .footer-links ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer .footer-links ul .social-medias li {
+            display: inline-block;
+            padding: 5px 0.5px;
+            margin-bottom: 14px;
+        }
+
+        .footer .footer-links ul .social-medias li i {
+            background-color: black;
+            padding: 7px 7px 5.3px 7px;
+            font-size: 11px;
+            color: white;
+            border-radius: 12px;
+        }
+
+        .footer .footer-links ul li img {
+            width: 50%;
+        }
+
+        .footer .container hr {
+            margin: 60px 0px 25px 0px;
+        }
+
+        .footer .container footer p {
+            width: 100%;
+            line-height: 17px;
+            color: rgba(79, 79, 79, 0.880);
+            font-size: 12.77px;
+            padding-bottom: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Zomato-BG & Nav -->
+    <div class="zomato-bg">
+        <div class="navbar">
+            <div class="navbar-container">
+                <div class="logo">
+                    <p><img src="./Assets/Zomato-GetTheApp.png" alt="GetTheApp"> Get the App</p>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Investor Relations</a></li>
+                        <li><a href="#">Add restaurant</a></li>
+                        <li><a href="#">Log in</a></li>
+                        <li><a href="#">Sign up</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <div class="nav-contents-container">
+                <img src="https://b.zmtcdn.com/web_assets/8313a97515fcb0447d2d77c276532a511583262271.png" alt="Zomato">
+                <p>Discover the best food & drinks in <strong>Chennai</strong></p>
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <input type="text" class="search-input" placeholder="Chennai">
+                        <i class="fa fa-caret-down"></i> |
+                    </button>
+                    <span>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="search" class="restaurant-input"
+                            placeholder="Search for restaurant, cuisine or a dish">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured -->
+    <div class="featured">
+        <div class="container">
+            <div class="restaurants">
+                <div class="restaurant">
+                    <img src="https://b.zmtcdn.com/webFrontend/e5b8785c257af2a7f354f1addaf37e4e1647364814.jpeg?output-format=webp&fit=around|402:360&crop=402:360;*,*"
+                        alt="Order Online">
+                    <div class="content">
+                        <p class="main-heading">Order Online</p>
+                        <p class="sub-heading">Stay home and order to your doorstep</p>
+                    </div>
+                </div>
+                <div class="restaurant">
+                    <img src="https://b.zmtcdn.com/webFrontend/d026b357feb0d63c997549f6398da8cc1647364915.jpeg?output-format=webp&fit=around|402:360&crop=402:360;*,*"
+                        alt="Dining">
+                    <div class="content">
+                        <p class="main-heading">Dining</p>
+                        <p class="sub-heading">View the city's favourite dining venues</p>
+                    </div>
+                </div>
+                <div class="restaurant">
+                    <img src="https://b.zmtcdn.com/webFrontend/d9d80ef91cb552e3fdfadb3d4f4379761647365057.jpeg?output-format=webp&fit=around|402:360&crop=402:360;*,*"
+                        alt="Nightlife and Clubs">
+                    <div class="content">
+                        <p class="main-heading">Nightlife and Clubs</p>
+                        <p class="sub-heading">Explore the city’s top nightlife outlets</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cuisines -->
+    <div class="cuisines">
+        <div class="container">
+            <h1>Collections</h1>
+            <div class="cuisines-sub">
+                <span class="subhead1">Explore curated lists of top restaurants, cafes, pubs, and bars in Chennai,
+                    based on trends</span>
+                <span class="subhead2">All collections in Chennai <i class="fa-solid fa-caret-right"></i></span>
+            </div>
+            <div class="cuisines-list">
+                <div class="cuisine">
+                    <img src="https://b.zmtcdn.com/data/collections/7771cf3a18e1da2916794d3998260c69_1709812319.png"
+                        alt="NewInTown">
+                    <div class="cuisine-content">
+                        <p>New In Town</p>
+                        <p class="places">8 Places<i class="fa-solid fa-caret-right"></i></p>
+                    </div>
+                </div>
+                <div class="cuisine">
+                    <img src="https://b.zmtcdn.com/data/collections/908aad87392ba1f9526e7b483b94d124_1711107868.jpg"
+                        alt="BestOfLiveScreenings">
+                    <div class="cuisine-content">
+                        <p>Best of live screenings</p>
+                        <p class="places">26 Places<i class="fa-solid fa-caret-right"></i></p>
+                    </div>
+                </div>
+                <div class="cuisine">
+                    <img src="https://b.zmtcdn.com/data/collections/2748683d9ae0c00e80ba4701e2545f66_1709815454.png"
+                        alt="SeaViewDining">
+                    <div class="cuisine-content">
+                        <p>Sea View Dining</p>
+                        <p class="places">7 Places<i class="fa-solid fa-caret-right"></i></p>
+                    </div>
+                </div>
+                <div class="cuisine">
+                    <img src="https://b.zmtcdn.com/data/collections/fbd237478a5d3b6ea08de83c30230cdd_1709811065.png"
+                        alt="DineForTheGram">
+                    <div class="cuisine-content">
+                        <p>Dine for the gram</p>
+                        <p class="places">11 Places<i class="fa-solid fa-caret-right"></i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Location -->
+    <div class="loc">
+        <div class="container">
+            <h3>Popular Localities in and around <span>Chennai</span></h3>
+            <div class="locations">
+                <div class="location">
+                    <a href="#">
+                        <h2>T. Nagar</h2>
+                        <p>357 places</p>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </div>
+                <div class="location">
+                    <a href="#">
+                        <h2>Nungambakkam</h2>
+                        <p>308 places</p>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </div>
+                <div class="location">
+                    <a href="#">
+                        <h2>Velachery</h2>
+                        <p>472 places</p>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </div>
+                <div class="location">
+                    <a href="#">
+                        <h2>Adyar</h2>
+                        <p>210 places</p>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </div>
+                <div class="location">
+                    <a href="#">
+                        <h2>Anna Nagar East</h2>
+                        <p>359 places</p>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </div>
+                <div class="location">
+                    <a href="#">
+                        <h2>Thuraipakkam</h2>
+                        <p>255 places</p>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </div>
+                <div class="location">
+                    <a href="#">
+                        <h2>Mylapore</h2>
+                        <p>171 places</p>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </div>
+                <div class="location">
+                    <a href="#">
+                        <h2>Alwarpet</h2>
+                        <p>142 places</p>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </div>
+                <div class="location">
+                    <a href="#" class="see-more">see more <i class="fa-solid fa-angle-down"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Phone App -->
+    <div class="phone-app">
+        <div class="container">
+            <div class="app-image">
+                <img src="https://b.zmtcdn.com/data/o2_assets/f773629053b24263e69f601925790f301680693809.png"
+                    alt="Phone App">
+            </div>
+            <div class="app-content">
+                <h3>Get the Zomato app</h3>
+                <p>We will send you a link, open it on your phone to download the app</p>
+                <div class="radio">
+                    <label for="Email"></label>
+                    <input type="radio" name="app" id="app">
+                    <h1>Email</h1>
+                    <input type="radio" name="app" id="app">
+                    <h1>Phone</h1>
+                </div>
+                <input type="email" name="email" id="email" placeholder="Email">
+                <button>Share App Link</button>
+                <p class="store-font">Download app from</p>
+                <div class="app-store">
+                    <img src="https://b.zmtcdn.com/data/webuikit/23e930757c3df49840c482a8638bf5c31556001144.png"
+                        alt="Play Store">
+                    <img src="https://b.zmtcdn.com/data/webuikit/9f0c85a5e33adb783fa0aef667075f9e1556003622.png"
+                        alt="App Store">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Explore -->
+    <div class="explore">
+        <div class="container">
+            <h3>Explore options near me</h3>
+            <div class="populars">
+                <div class="popular">
+                    <p>Popular cuisines near me<i class="fa-solid fa-angle-down"></i></p>
+                </div>
+                <div class="popular">
+                    <p>Popular restaurant types near me<i class="fa-solid fa-angle-down"></i></p>
+                </div>
+                <div class="popular">
+                    <p>Top Restaurant Chains<i class="fa-solid fa-angle-down"></i></p>
+                </div>
+                <div class="popular">
+                    <p>Cities We Deliver To<i class="fa-solid fa-angle-down"></i></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="hd">
+                <div class="logo"><img
+                        src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png?fit=around|198:42&crop=198:42;*,*"
+                        alt="Zomato-Footer"></div>
+                <div class="language-switcher">
+                    <span><img src="./Assets/Zomato-Footer-India.png" alt="India">India<i
+                            class="fa-solid fa-angle-down"></i></span>
+                    <span><img src="./Assets/Zomato-Footer-Globe.png" alt="Globle">English<i
+                            class="fa-solid fa-angle-down"></i></span>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <ul>
+                    <li class="li-head">ABOUT ZOMATO</li>
+                    <li><a href="#">Who We Are</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Work With Us</a></li>
+                    <li><a href="#">Investor Relations</a></li>
+                    <li><a href="#">Report Fraud</a></li>
+                    <li><a href="#">Press Kit</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+                <ul>
+                    <li class="li-head">ZOMAVERSE</li>
+                    <li><a href="#">Zomato</a></li>
+                    <li><a href="#">Blinkit</a></li>
+                    <li><a href="#">Feeding India</a></li>
+                    <li><a href="#">Hyperpure</a></li>
+                    <li><a href="#">Zomaland</a></li>
+                </ul>
+                <ul>
+                    <li class="li-head">FOR RESTAURANTS</li>
+                    <li><a href="#">Partner With Us</a></li>
+                    <li><a href="#">Apps For You</a></li>
+                </ul>
+                <ul>
+                    <li class="li-head">LEARN MORE
+                    <li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+                <ul>
+                    <li class="li-head">SOCIAL LINKS</li>
+                    <div class="social-medias">
+                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    </div>
+                    <li><a href="#">
+                            <img src="https://b.zmtcdn.com/data/webuikit/9f0c85a5e33adb783fa0aef667075f9e1556003622.png"
+                                alt="AppStore"></a></li>
+                    <li><a href="#">
+                            <img src="https://b.zmtcdn.com/data/webuikit/23e930757c3df49840c482a8638bf5c31556001144.png"
+                                alt="GooglePlay"></a></li>
+                </ul>
+            </div>
+            <hr>
+            <footer>
+                <p> By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy
+                    and Policies. All trademarks are properties of their respective owners. 2008-2024 &copy;
+                    Zomato™ Ltd. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
