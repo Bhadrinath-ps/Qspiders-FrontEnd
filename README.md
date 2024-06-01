@@ -11,14 +11,10 @@
 
 ## Cloned Landing Pages ✨
 
-1. **Zomato:** A clone of the popular food delivery platform's landing page.
-   - 🌐 [Live Demo](https://bhadrinath-ps.github.io/Qspiders-FrontEnd/Zomato.html)
-2. **Google Search:** A replica of the Google search homepage.
-   - 🌐 [Live Demo](https://bhadrinath-ps.github.io/Qspiders-FrontEnd/Google-Search-Clone.html)
-3. **Creative Pricing Table:** A stylish and responsive pricing table layout.
-   - 🌐 [Live Demo](https://bhadrinath-ps.github.io/Qspiders-FrontEnd/Creative-Pricing-Table.html)
-4. **Instagram Credentials:** A clone of Instagram's login credentials page.
-   - 🌐 [Live Demo](https://bhadrinath-ps.github.io/Qspiders-FrontEnd/Instagram-Credentials/Instagram-Login.html)
+1. **Zomato:** A clone of the popular food delivery platform's landing page. 🌐 [Live Demo](https://bhadrinath-ps.github.io/Qspiders-FrontEnd/Zomato.html)
+2. **Google Search:** A replica of the Google search homepage. 🌐 [Live Demo](https://bhadrinath-ps.github.io/Qspiders-FrontEnd/Google-Search-Clone.html)
+3. **Creative Pricing Table:** A stylish and responsive pricing table layout. 🌐 [Live Demo](https://bhadrinath-ps.github.io/Qspiders-FrontEnd/Creative-Pricing-Table.html)
+4. **Instagram Credentials:** A clone of Instagram's login credentials page. 🌐 [Live Demo](https://bhadrinath-ps.github.io/Qspiders-FrontEnd/Instagram-Credentials/Instagram-Login.html)
 
 ## How to Run ⚙️
 
@@ -38,5 +34,5 @@ Feel free to explore these projects, check out the code, try the live applicatio
 
 🔗 [Zomato](https://bhadrinath-ps.github.io/Qspiders-FrontEnd/Zomato.html)  
 🔗 [Google Search](https://bhadrinath-ps.github.io/Qspiders-FrontEnd/Google-Search-Clone.html)  
-🔗 [Creative Pricing Table](https://bhadrinath-ps.github.io/Qspiders-FrontEnd/Creative-Pricing-Table.html)
+🔗 [Creative Pricing Table](https://bhadrinath-ps.github.io/Qspiders-FrontEnd/Creative-Pricing-Table.html)  
 🔗 [Instagram Credentials](https://bhadrinath-ps.github.io/Qspiders-FrontEnd/Instagram-Credentials/Instagram-Login.html)  
